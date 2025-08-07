@@ -1,15 +1,40 @@
-// Animate sections on scroll
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('section').forEach(sec => {
-    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-      sec.classList.add('visible');
-    }
-  });
+// Dark Mode Toggle
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+const icon = document.getElementById("toggle-icon");
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+
+  if (body.classList.contains("dark-theme")) {
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  } else {
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+  }
 });
 
-// Back to Top button
-const topBtn = document.getElementById('topBtn');
-window.onscroll = () => {
-  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-};
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+// Scroll to top
+const toTopBtn = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    toTopBtn.classList.add("active");
+  } else {
+    toTopBtn.classList.remove("active");
+  }
+});
+
+// Form submission feedback
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Thank you! Your message has been submitted.");
+  this.reset();
+});
+
+// AOS Animation Initialization
+AOS.init({
+  duration: 1000,
+  once: true
+});
