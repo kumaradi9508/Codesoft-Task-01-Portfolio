@@ -4,35 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Codesoft | Aditya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
 
+  <!-- Fonts & Favicon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
 <body>
+  <a id="top"></a>
+
   <nav>
     <div class="logo">MyPortfolioPage</div>
     <div>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <div class="content">
-    <section id="home">
+    <!-- Home Section -->
+    <section id="home" data-aos="fade-up">
       <h2>Hello, I'm Aditya 👋</h2>
       <p>Welcome to my Codesoft internship project! Scroll down to see my work.</p>
-      <button>Explore More</button>
+      <button type="button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Explore More</button>
     </section>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
       <p>BTech student passionate about frontend development. I enjoy building beautiful and functional web interfaces with HTML, CSS, and JavaScript.</p>
-      <button>Know More</button>
+      <button type="button" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">Know More</button>
     </section>
 
-    <section id="services">
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up">
       <h2>My Projects</h2>
       <p>Here are some of the mini-projects I built during my internship:</p>
       <div class="card-container">
@@ -63,7 +73,8 @@
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up">
       <h2>Contact Me</h2>
       <p>Have a project in mind or want to collaborate? Let’s talk!</p>
       <div class="contact-card">
@@ -77,10 +88,19 @@
     </section>
   </div>
 
-  <footer>&copy; 2025 | Designed by Aditya</footer>
-  <button id="topBtn">↑</button>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 | Designed by Aditya | 
+    <a href="mailto:your.email@example.com" style="color: #90cdf4; text-decoration: underline;">Email Me</a>
+  </footer>
 
+  <!-- Buttons -->
+  <button id="topBtn">↑</button>
+  <button id="toggleTheme">🌙</button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="script.js"></script>
 </body>
 </html>
-
